@@ -1,0 +1,12 @@
+div class="message"
+  / -binding.pry
+  -if Subscriber.find(message.subscriber_id).user_id == current_user.id
+    p style="text-align: right;text-align: right;background: rgba(0, 128, 128, 0.38);padding: 10px;border-radius: 6px;"
+      = message.content 
+      br
+      span.created_at = message.created_at.strftime("%a %e %b %l:%M %p")
+  -else
+    p style="text-align: left;background: rgba(245, 222, 179, 0.51);padding: 10px;border-radius: 6px;"
+      = message.content
+      br
+      span.created_at = message.created_at.strftime("%a %e %b %l:%M %p")

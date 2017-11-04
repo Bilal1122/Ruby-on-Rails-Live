@@ -1,0 +1,26 @@
+/ = "Current_user: #{current_user.email}"
+.chats_div
+  br
+  .left_div
+    h1.header style="font-size:24px;margin-top: -4px;" Chats
+    -if @user_chats.present?
+      -@user_chats.each do |chat|
+        .chats
+          .chat-title
+            = User.find(chat.subscribers.where.not(user_id: current_user.id).last.user_id).email
+
+          span.latest-msg oh i cant come over guys becasue i have a bad flu
+          span = link_to "view chat", chat_path(chat.id), class: "chat_btn"
+    -else
+      br
+      br
+      h1.header style="font-size:24px;margin-top: -4px;" No Chats Yet
+  .right_div
+    h1.header style="font-size:24px;margin-top: -4px;" Create Chat
+    / br
+    /= link_to "Create New Group", "#", class: "message-now-btn", style:"background: rgb(55, 187, 177);"
+    / br
+    -@all_users.each do |user|
+      .chats
+        .user-name = user.email
+        span = link_to "Message Now", chats_path(id: user.id), method: :post, class: "message-now-btn"
