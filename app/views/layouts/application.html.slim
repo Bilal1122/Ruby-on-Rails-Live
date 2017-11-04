@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title LiveChatApp
+    = csrf_meta_tags 
+    = action_cable_meta_tag 
+    / = display_meta_tags
+    / meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    / meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' 
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' 
+
+  body
+    .float_right style='width: 100%;text-align: right;margin-bottom: -32px;height:80px;'
+      = "Current_user: #{current_user.email} "
+      br
+      br
+      = link_to "Log Out", destroy_user_session_path, method: :delete, class: "log-out"
+    h1 style="text-align:center;" Live Chat Application
+    = yield 
