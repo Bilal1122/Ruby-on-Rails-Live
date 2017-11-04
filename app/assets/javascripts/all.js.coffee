@@ -12,7 +12,7 @@ $ ->
             objDiv = document.getElementsByClassName('message_content_div')[0]
             objDiv.scrollTop = objDiv.scrollHeight
           ), 10
-          document.getElementById('message_content').value = ""
+          document.getElementById('send_msg_content').value = null
         else
           alert("Blank Message Alert!")
         evt.preventDefault()
