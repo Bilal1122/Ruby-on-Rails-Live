@@ -4,6 +4,7 @@ production:
   url: redis://localhost:6379
 
 development:
+  adapter: redis
   url: redis://localhost:6379
 
 test:
