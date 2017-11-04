@@ -11,10 +11,11 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' 
 
   body
-    .float_right style='width: 100%;text-align: right;margin-bottom: -32px;height:80px;'
-      = "Current_user: #{current_user.email} "
-      br
-      br
-      = link_to "Log Out", destroy_user_session_path, method: :delete, class: "log-out"
+    -if current_user.present?
+      .float_right style='width: 100%;text-align: right;margin-bottom: -32px;height:80px;'
+        = "Current_user: #{current_user.email} "
+        br
+        br
+        = link_to "Log Out", destroy_user_session_path, method: :delete, class: "log-out"
     h1 style="text-align:center;" Live Chat Application
     = yield 
