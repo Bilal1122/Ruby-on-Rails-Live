@@ -2,12 +2,11 @@
 #user-id style="display:none;" = current_user.id
 .father-div style="margin-top: -38px;"
   .message_div
-    / h1 style="margin-top: -40px;" Chat
     h4 = "#{current_user.email} - #{User.find(@chat.subscribers.where.not(user_id: current_user.id).last.user_id).email}"
     .message_content_div id="messages"
       = render @messages
-      / p.typing_text Typing....
-    = text_area_tag :send_msg_content
-    / = text_field_tag :count
+    / -if !@messages.present?
+    /   h4 Message now!
+    = text_area_tag :send_msg_content, nil, placeholder: "Type your message here."
     br
     = link_to "Send Message", "#", id: "create_msg", class: "send-btn"

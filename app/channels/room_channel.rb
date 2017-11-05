@@ -8,7 +8,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    # binding.pry
+    #Data comes here from the server and is passes to channel/room.js to be brodcasted
     subscriber = Subscriber.find(data['message']['subscriber_id'])
     if !data['message']['typing'].present?
       message = Message.create(content: data['message']['content'], subscriber_id: subscriber.id)

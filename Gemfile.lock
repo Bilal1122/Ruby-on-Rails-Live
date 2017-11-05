@@ -90,6 +90,8 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    pattern_generator (0.1.0)
+      rails (>= 4.0.0)
     pg (0.21.0)
     pry (0.11.2)
       coderay (~> 1.1.0)
@@ -196,6 +198,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
+  pattern_generator
   pg
   pry-byebug
   puma

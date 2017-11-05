@@ -17,5 +17,6 @@ html
         br
         br
         = link_to "Log Out", destroy_user_session_path, method: :delete, class: "log-out"
+        = link_to "View Dashboard", chats_path, class: "log-out", style:"margin-right: 12px;background: orange;"
     h1 style="text-align:center;" Live Chat Application
     = yield 

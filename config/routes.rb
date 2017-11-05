@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
   root 'chats#index'
   get 'switch_user' => 'switch_user#set_current_user'
-  # get '*path' => redirect('/')
+  get '*path' => redirect('/')
 end
