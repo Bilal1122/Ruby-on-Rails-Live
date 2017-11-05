@@ -33,7 +33,9 @@ gem 'pry-byebug'
 
 gem 'semantic-ui-sass'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 3.0'
+gem 'redis'
+gem 'hiredis'
+gem 'em-synchrony'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -53,7 +55,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'em-hiredis'
+  # gem 'em-hiredis'
   # gem 'redis', '~> 3.0'
 end
 

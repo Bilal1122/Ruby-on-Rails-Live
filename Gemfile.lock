@@ -59,9 +59,8 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-    em-hiredis (0.3.1)
-      eventmachine (~> 1.0)
-      hiredis (~> 0.6.0)
+    em-synchrony (1.0.6)
+      eventmachine (>= 1.0.0.beta.1)
     erubis (2.7.0)
     eventmachine (1.2.5)
     execjs (2.7.0)
@@ -198,7 +197,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
-  em-hiredis
+  em-synchrony
+  hiredis
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
@@ -206,7 +206,7 @@ DEPENDENCIES
   pry-byebug
   puma
   rails (>= 5.0.0.beta3, < 5.1)
-  redis (~> 3.0)
+  redis
   sass-rails (~> 5.0)
   semantic-ui-sass
   slim-rails
