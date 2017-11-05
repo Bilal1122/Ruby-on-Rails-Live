@@ -16,14 +16,14 @@ class ChatCreationService
           chat_id = new_chat[:chat_id]
         end
         if chat_id.present? 
-          return {chat_id: chat_id, success: true}
+          return { chat_id: chat_id, success: true }
           break
         end
       end
     else
       new_chat = create_chat_and_add_recipient
       chat_id = new_chat[:chat_id]
-      return {chat_id: chat_id, success: true}
+      return { chat_id: chat_id, success: true }
     end
   end
 

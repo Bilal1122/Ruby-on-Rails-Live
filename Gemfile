@@ -29,6 +29,9 @@ gem 'devise'
 #slim
 gem 'slim-rails'
 
+#rubocop
+gem 'rubocop', '~> 0.51.0', require: false
+
 gem 'pry-byebug'
 
 gem 'semantic-ui-sass'
