@@ -12,11 +12,8 @@ class ChatsController < ApplicationController
 
   def create
     recipient = User.find(params[:id])
-    # if current_user.chats.joins(:subscribers).where(subscribers: {user_id: recipient.id}).present?
-    chat = Chat.create()
-    Subscriber.create(user_id: current_user.id, chat_id: chat.id)
-    Subscriber.create(user_id: recipient.id, chat_id: chat.id)
-    redirect_to chats_path
+    response = ChatCreationService.new(current_user, recipient).call
+    redirect_to chat_path(response[:chat_id])
   end
 
   def show
