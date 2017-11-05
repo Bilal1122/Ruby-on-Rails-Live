@@ -14,11 +14,11 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
       if (data.typing === "true"){
         $(".typing-text").remove();
         $('#messages').append ("<typing-text class='typing-text'>" + "Typing.... " + "</br>" + "</br>" + "</typing-text>")
-      }else{
-        $(".typing-text").remove();
         var objDiv;
         objDiv = document.getElementsByClassName('message_content_div')[0];
         objDiv.scrollTop = objDiv.scrollHeight;
+      }else{
+        $(".typing-text").remove();
       }
     }
     if (data.typing === undefined){
