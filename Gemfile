@@ -44,6 +44,9 @@ gem 'semantic-ui-sass'
 #   gem 'redis', '~> 3.0'
 # end
 
+gem 'em-hiredis'
+gem 'redis'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -58,7 +61,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'em-hiredis'
   # gem 'redis'
-  gem 'redis', '~> 3.0'
+  # gem 'redis', '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -206,7 +206,7 @@ DEPENDENCIES
   pry-byebug
   puma
   rails (>= 5.0.0.beta3, < 5.1)
-  redis (~> 3.0)
+  redis
   sass-rails (~> 5.0)
   semantic-ui-sass
   slim-rails
