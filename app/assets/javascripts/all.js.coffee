@@ -1,7 +1,14 @@
 $ ->
   $(document).ready ->
-    objDiv = document.getElementsByClassName('message_content_div')[0]
-    objDiv.scrollTop = objDiv.scrollHeight
+    if document.getElementsByClassName('message_content_div')[0] != undefined
+      objDiv = document.getElementsByClassName('message_content_div')[0]
+      objDiv.scrollTop = objDiv.scrollHeight
+      
+    $('#view_chat_button').on 'click', (evt)->
+      setTimeout (->
+        location.reload();
+      ), 10
+
     setTimeout (->
       app = this.App
       $('#create_msg').on 'click', (evt)->
@@ -25,4 +32,4 @@ $ ->
           else
             app.room.speak(typing: "false", subscriber_id: parseInt(document.getElementById('subscriber-id').innerHTML))
         ), 10
-    ), 1000
+    ), 10
