@@ -7,7 +7,7 @@ $ ->
     $('#view_chat_button').on 'click', (evt)->
       setTimeout (->
         location.reload();
-      ), 10
+      ), 1000
 
     setTimeout (->
       app = this.App
