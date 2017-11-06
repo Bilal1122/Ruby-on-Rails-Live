@@ -7,8 +7,10 @@
         .chats
           .chat-title
             = User.find(chat.subscribers.where.not(user_id: current_user.id).last.user_id).email
-
-          span.latest-msg oh i cant come over guys becasue i have a bad flu
+          -if chat.messages.present?
+            span.latest-msg = chat.messages.last.content
+          -else
+            span.latest-msg No new message yet
           span = link_to "view chat", chat_path(chat.id), class: "chat_btn"
     -else
       br
