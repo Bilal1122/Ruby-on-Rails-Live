@@ -4,10 +4,11 @@ $ ->
       objDiv = document.getElementsByClassName('message_content_div')[0]
       objDiv.scrollTop = objDiv.scrollHeight
       
-    $('#view_chat_button').on 'click', (evt)->
+    $('.view_chat_button').on 'click', (evt)->
       setTimeout (->
         location.reload();
-      ), 1000
+        console.log("ss")
+      ), 10
 
     setTimeout (->
       app = this.App
@@ -26,7 +27,7 @@ $ ->
 
       $('#send_msg_content').on 'input', (evt)->
         setTimeout (->
-          console.log(document.getElementById('send_msg_content').value)
+          # console.log(document.getElementById('send_msg_content').value)
           if document.getElementById('send_msg_content').value != ""
             app.room.speak(typing: "true", subscriber_id: parseInt(document.getElementById('subscriber-id').innerHTML))
           else
