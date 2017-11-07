@@ -20,4 +20,8 @@ class ChatsController < ApplicationController
     @chat = Chat.find(params[:id])
     @messages = @chat.messages
   end
+
+  def chat_link
+    redirect_to chat_path(params[:chat_id])
+  end
 end

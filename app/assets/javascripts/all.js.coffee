@@ -3,12 +3,6 @@ $ ->
     if document.getElementsByClassName('message_content_div')[0] != undefined
       objDiv = document.getElementsByClassName('message_content_div')[0]
       objDiv.scrollTop = objDiv.scrollHeight
-      
-    $('.view_chat_button').on 'click', (evt)->
-      setTimeout (->
-        location.reload();
-        console.log("ss")
-      ), 1000
 
     setTimeout (->
       app = this.App
