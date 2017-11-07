@@ -8,7 +8,7 @@ $ ->
       setTimeout (->
         location.reload();
         console.log("ss")
-      ), 10
+      ), 1000
 
     setTimeout (->
       app = this.App
